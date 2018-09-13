@@ -2,11 +2,19 @@ package domain;
 
 public class Tree extends Product {
 
-    private int height;
+    private double height;
 
-    public Tree(int h, int price){
+    public Tree(double h, double price) throws Exception {
         super(price);
         this.height =h;
 
+    }
+
+    @Override
+    public String toString() {
+        return "Tree{" +
+                "height=" + height +
+                ", price=" + price +
+                '}';
     }
 }

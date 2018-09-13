@@ -1,7 +1,6 @@
 package view;
 
 import application.FlowerShopController;
-import domain.FlowerShop;
 
 import java.awt.*;
 
@@ -12,18 +11,26 @@ public class Main {
     public static void main(String[] args) throws Exception {
         controller.createFlowerShop("lapepita");
 
-        controller.createDecoration("plastic", 3);
-        controller.createFlower(Color.BLACK, 4);
-        String allProducts= controller.getAllProducts();
+        controller.addDecoration("gdgda", 3);
 
-        fs1.add(controller.createFlower(Color.BLACK, 4);
-        fs1.add(fgfg)
+        controller.addTree(12, 4);
 
+        controller.addFlower("black", 4);
+        controller.addFlower("blue", 5);
+        controller.addTree(12, 13);
 
+        String allDecoration= controller.getAllDecoration();
 
-        System.out.println(fs1);
+        System.out.println(allDecoration);
 
-        System.out.println(allProducts);
+        String allTree= controller.getAllTree();
+
+        System.out.println(allTree);
+
+        String allFlowers= controller.getAllFlowers();
+
+        System.out.println(allFlowers);
+
 
     }
 }

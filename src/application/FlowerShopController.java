@@ -2,39 +2,54 @@ package application;
 
 import domain.*;
 
-import java.awt.*;
-
 public class FlowerShopController {
 
-
+    FlowerShop flowerShop;
 
     public FlowerShopController(){
 
     }
     public void createFlowerShop (String name) throws Exception{
-        FlowerShop flowershop = new FlowerShop(name);
+        flowerShop = new FlowerShop(name);
     }
 
-    public void createDecoration (String material, int price) throws Exception{
-        Product decoration = new Decoration(material, price);
-        FlowerShop.addProduct(decoration);
+    public void addDecoration(String material, double price) throws Exception{
+        Decoration decoration = new Decoration(material, price);
+        flowerShop.addDecoration(decoration);
     }
 
-    public void createTree (int height, int price) throws Exception{
-        Product tree = new Tree(height, price);
-        FlowerShop.addProduct(tree);
+    public void addTree(double height, double price) throws Exception{
+        Tree tree = new Tree(height, price);
+        flowerShop.addTree(tree);
     }
 
-    public void createFlower (Color col, int price) throws Exception{
-        Product flower = new Flower(col, price);
-        FlowerShop.addProduct(flower);
+    public void addFlower (String col, double price) throws Exception{
+        Flower flower = new Flower(col, price);
+        flowerShop.addFlower(flower);
     }
 
-    public String getAllProducts() {
-        String allProducts="";
-        for(Product product : repository.getAllProducts()){
-            allProducts += product.toString()+ " \n";
+    public String getAllFlowers() {
+        String allFlowers="";
+        for(Flower flower : flowerShop.getAllFlowers()){
+            allFlowers += flower.toString()+ " \n";
         }
-        return allProducts;
+        return allFlowers;
     }
+
+    public String getAllTree() {
+        String allTree="";
+        for(Tree tree : flowerShop.getAllTree()){
+            allTree += tree.toString()+ " \n";
+        }
+        return allTree;
+    }
+
+    public String getAllDecoration() {
+        String allDecoration="";
+        for(Decoration decoration : flowerShop.getAllDecoration()){
+            allDecoration += decoration.toString()+ " \n";
+        }
+        return allDecoration;
+    }
+
 }
